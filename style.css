@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box; /*hace que los elementos no crezcan más allá de lo que establecí*/
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+h1{font-size: 32px;}
+h2{font-size: 27px;}
+h3{font-size: 20px;}
+p{font-size: 15px;}
+
+button{
+    font-size: 15px;
+    padding: 15px 50px;
+    border-radius: 25px;
+    border: none;
+    color:white;
+    background-color: #AAD759;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #E7E7E7;
+}
+
+button:active{
+    background-color: #678136;
+}
+header{
+    background-color: #FFFDFD;
+}
+
+header .logo{
+    margin: 0%;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: #485696;
+    font-size: 25px;
+
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #485696;
+    cursor: pointer;
+}
+
+header a:hover{
+    color: #242b4b;
+}
+
+.aboutMe {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    background-color: #485696; 
+    height: 300px; 
+    padding-left: 3%;
+    padding-top: 1%;
+}
+
+.text-section {
+    flex: 1; /* Ocupa la mitad del contenedor */
+    padding: 20px; 
+}
+
+.myPic {
+    flex: 1; /* Ocupa la otra mitad del contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.myPic img {
+    max-width: 100%; 
+    height: 120%; 
+
+}
+
