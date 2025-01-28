@@ -12,39 +12,14 @@ document.querySelector('.logo').addEventListener('click', function(e) {
      window.scrollTo({top :0 , behavior :'smooth' });
 });
 
-// Toggle menu visibility on mobile
+// Intento de menu toggle
+
 const mobileMenu = document.getElementById('mobile-menu');
 const nav = document.getElementById('nav');
 
 mobileMenu.addEventListener('click', () => {
      nav.classList.toggle('active');
 });
-
-// Tiny Slider configuration
-/*const slider = tns({
-     container :'.skills-slider',
-     items :5 ,
-     slideBy :1 ,
-     autoplay :true ,
-     autoplayTimeout :3000 ,
-     autoplayButtonOutput :false ,
-     controls :true , // Asegúrate de mostrar controles si es necesario
-     navPosition :'bottom',
-     responsive :{
-         0 :{
-             items :2
-         },
-         480 :{
-             items :3
-         },
-         768 :{
-             items :4
-         },
-         992 :{
-             items :5
-         }
-     }
-});*/
 
 //-------------------------------------VALIDACIONES FORMULARIO--------------------------------------------
 
