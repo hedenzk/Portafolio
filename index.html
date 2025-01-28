@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <p class="logo">Aquí va el logo</p> 
-            <nav>
-                <a href="#">About me</a>
-                <a href="#">Skills</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Contact me</a>
+    <header class="header">
+        <div class="contenedorNav">
+            <a href="#" class="logo">
+                <img src="/api/placeholder/40/40" alt="Logo">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav class="barraNav" id="nav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact me</a>
             </nav>
         </div>
     </header>
-    <div class="aboutMe">
-        <div class="text-section">
-            <h1>About me</h1>
+
+    <section id="about" class="section about">
+        <div class="contenidoAbout">
+            <h1>About me</h1><br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime eligendi minus commodi, culpa inventore magni earum officiis! Delectus sed aliquam aliquid officia aut non ipsam dolores totam amet impedit?</p>
             <br>
             <form action="https://docs.google.com/document/d/1IQTxl47Ila7h2Pe-lmkBuUwrFO4JukrY/edit#heading=h.gjdgxs">
@@ -28,8 +36,120 @@
             </form>              
         </div>
         <div class="myPic">
-            <img src="yop.png" alt="Mi avatar">
+            <img src="/images/yop.png" alt="Mi avatar">
         </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <h1>Skills</h1><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime eligendi minus commodi, culpa inventore magni earum officiis! Delectus sed aliquam aliquid officia aut non ipsam dolores totam amet impedit?</p>
+        <br> 
+        <div class="skills-slider">
+            <div class="logos"> 
+                <div class="logoItem">
+                    <img src="/images/bxl-github.svg" alt="Logo GitHub" class="imagenLogos">       
+                    <h3 class="nombreLogos">GitHub</h3>        
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-java.svg" alt="Logo Java" class="imagenLogos">      
+                    <h3 class="nombreLogos">Java</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-javascript.svg" alt="Logo JavaScript" class="imagenLogos">        
+                    <h3 class="nombreLogos">JavaScript</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-nodejs.svg" alt="Logo NodeJS" class="imagenLogos">            
+                    <h3 class="nombreLogos">NodeJS</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-html5.svg" alt="Logo HTML" class="imagenLogos">
+                    <h3 class="nombreLogos">HTML</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-css3.svg" alt="Logo CSS" class="imagenLogos">
+                    <h3 class="nombreLogos">CSS</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-python.svg" alt="Logo Python" class="imagenLogos">
+                    <h3 class="nombreLogos">Python</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-git.svg" alt="Logo Git" class="imagenLogos">
+                    <h3 class="nombreLogos">Git</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-bootstrap.svg" alt="Logo Bootstrap" class="imagenLogos">
+                    <h3 class="nombreLogos">Bootstrap</h3>
+                </div>
+                <div class="logoItem">
+                    <img src="/images/bxl-spring-boot.svg" alt="Logo Spring Boot" class="imagenLogos">
+                    <h3 class="nombreLogos">SpringBoot</h3>
+                    <br><br>         
+                </div>  
+            </div>    
+    </section>        
+
+    <section id="portfolio" class="section portfolio">
+        <h1>Portfolio</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="/api/placeholder/400/225" alt="Project 1">
+            </div>
+            <div class="portfolio-item">
+                <img src="/api/placeholder/400/225" alt="Project 2">
+            </div>
+            <div class="portfolio-item">
+                <img src="/api/placeholder/400/225" alt="Project 3">
+            </div>
+            <div class="portfolio-item">
+                <img src="/api/placeholder/400/225" alt="Project 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h1>Contact Me</h1>
+        <p>Get in touch with me</p>
+        <div class="contact-form-container">
+            <form id="contactForm" onsubmit="return sendEmail(event)">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="location" name="location" placeholder="Location" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="social-links">
+        <a href="https://github.com" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+        </a>
     </div>
+
+    <!--<script src = "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script >-->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ header{
 }
 
 .logo img {
-    width: 40px;
+    width: 80px;
     height: 40px;
     transition: transform 0.3s ease;
 }
@@ -79,71 +79,78 @@ header{
     color: #4a4e8c;
     text-decoration: none;
     font-weight: 500;
+    transition: transform 0.3s ease;
 }
 
 .barraNav a:hover {
     color: #2a2e5c;
+    transform: scale(1.1);
 }
 
 .section {
     padding: 4rem 2rem;
  }
- 
- .about {
+
+.secciónSobreMi {
     display: flex; /* Usar flexbox para alinear los elementos */
     background-color: #485696; 
     height: auto; /* Cambiar a auto para ajustarse al contenido */
- }
- 
- .contenidoAbout {
+    margin-top: 80px;
+}
+
+.contenidoSobreMi {
     max-width: 50%; /* Ajustar a la mitad del contenedor */
     margin-top: 80px;
+    margin-left: 100px;
     padding-left: 20px; /* Espaciado interno */
     color:#E7E7E7;
- }
- 
- .myPic {
-    max-width: 50%; /* Ajustar a la mitad del contenedor */
-    display:flex;
-    justify-content:center; /* Centra la imagen horizontalmente */
-    align-items:center; /* Centra la imagen verticalmente */
- }
- 
- .myPic img {
-    max-width:100%; 
-    height:auto; /* Ajustar altura automáticamente */
- }
+}
 
- .skills {
+.myPic {
+    max-width: 50%; /* Ajustar a la mitad del contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+
+    overflow: hidden;
+}
+
+.myPic img {
+    max-width:100%; 
+    height: 500px;
+    object-fit: cover;
+}
+
+.secciónHabilidades {
     background-color:white;
     padding :4rem 0 ;
     text-align:center ;
     color:#4a4e8c ;
- }
- 
- .skills-slider {
-    max-width :75vw ;
+}
+
+.slider {
+    width: 90vw;
     height: auto;
-    margin : 2px;
+    margin:auto;
     overflow: hidden;
- }
+}
 
- .skills-slider .logos {
+.slider .slide-track {
     display: flex;
-    animation: scroll 40 sg linear infinite;
-    -webkit-animation: scroll 40 sg linear infinite;
-    width: calc(200px * 24);
- }
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: calc(200px * 20);
+}
 
- .skills-slider .logoItem {
+.slider .slide {
     width: 200px;
- }
+}
 
- .skills-slider .logoItem .img {
+.slider .slide .img {
     width: 100%;
- }
+}
 
- @keyframes scroll {
+@keyframes scroll {
     0% {
         -webkit-transform: translateX(0);
         transform: translateX(0);
@@ -153,39 +160,43 @@ header{
         transform: translateX(calc(-50px * 12));
     }
  }
- 
- /* Cambiar color de los logos */
- .logoItem {
-      filter : brightness(0) saturate(100%) invert(80%) sepia(25%) saturate(632%) hue-rotate(41deg) brightness(92%) contrast(87%);
- }
 
-.logoItem:hover img {
-    transform: scale(1.2);
+.slide {
+    filter : brightness(0) saturate(100%) invert(80%) sepia(25%) saturate(632%) hue-rotate(41deg) brightness(92%) contrast(87%);
 }
 
-.nombreLogos h3 {
-    color: #4a4e8c;
+.iconos {
+    height: 50px;
+    width: 50px;
 }
 
-.portfolio {
+.slide:hover img {
+    transform: scale(1.3);
+}
+
+.slide h3 {
+    color:#2a2e5c;
+}
+
+.secciónPortafolio {
     background-color: #4a4e8c;
     color: white;
     text-align: center;
     padding: 4rem 0;
 }
 
-.portfolio h1 {
+.secciónPortafolio h1 {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.portfolio p {
+.secciónPortafolio p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 3rem auto;
 }
 
-.portfolio-grid {
+.contenidoPortafolio{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -194,71 +205,70 @@ header{
     padding: 0 2rem;
 }
 
-.portfolio-item {
+.itemPortafolio {
     background-color: #eee;
     aspect-ratio: 16/9;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.portfolio-item img {
+.itemPortafolio img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.contact {
+.secciónContáctame {
     background-color: #F8F8F8;
     padding: 4rem 0;
     color: #485696;
     text-align: center;
 }
 
-.contact h1 {
+.secciónContáctame h1 {
     margin-bottom: 1rem;
 }
 
-.contact p {
+.secciónContáctame p {
     margin-bottom: 3rem;
 }
 
-.contact-form-container {
+.contenedorContáctame {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.form-group {
+.entradasFormulario {
     margin-bottom: 1.5rem;
 }
 
-.form-group input,
-.form-group textarea {
+.entradasFormulario input,
+.entradasFormulario textarea {
     width: 100%;
     padding: 1rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     background-color: #E7E7E7;
     color: #485696;
 }
 
-.form-group textarea {
+.entradasFormulario textarea {
     min-height: 150px;
     resize: vertical;
-    font-family: 'Monserrat' sans-serif;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.entradasFormulario input::placeholder,
+.entradasFormulario textarea::placeholder {
     color: #485696;
     opacity: 0.7;
 }
 
-.submit-button {
+.botónEnviar {
     width: 100%;
     padding: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     background-color: #AAD759;
     color: white;
     font-family: 'Monserrat' sans-serif;
@@ -267,11 +277,12 @@ header{
     transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
+.botónEnviar:hover {
     background-color: #98c248;
 }
 
-.social-links {
+
+.linkRedes {
     position: fixed;
     bottom: 2rem;
     left: 2rem;
@@ -279,13 +290,13 @@ header{
     gap: 1rem;
 }
 
-.social-links a {
+.linkRedes a {
     color: #4a4e8c;
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 
-.social-links a:hover {
+.linkRedes a:hover {
     color: #2a2e5c;
 }
 
