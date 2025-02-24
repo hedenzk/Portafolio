@@ -1,24 +1,20 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement){
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }
     });
 });
 
 document.querySelector('.logo').addEventListener('click', function(e) {
      e.preventDefault();
      window.scrollTo({top :0 , behavior :'smooth' });
-});
-
-// Intento de menu toggle
-
-const mobileMenu = document.getElementById('mobile-menu');
-const nav = document.getElementById('nav');
-
-mobileMenu.addEventListener('click', () => {
-     nav.classList.toggle('active');
 });
 
 //-------------------------------------VALIDACIONES FORMULARIO--------------------------------------------

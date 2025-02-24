@@ -23,6 +23,7 @@ button{
     border-radius: 25px;
     border: none;
     color:white;
+    font-family: 'Montserrat', sans-serif;
     background-color: #AAD759;
     cursor: pointer;
 }
@@ -48,12 +49,6 @@ header{
     align-items: center;
 }
 
-
-.menu-toggle {
-    display: none; 
-}
-
-
 .logo {
     display: block;
 }
@@ -72,7 +67,7 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 2rem;
+    gap: 8rem;
 }
 
 .barraNav a {
@@ -87,51 +82,85 @@ header{
     transform: scale(1.1);
 }
 
+/*------------------------------Sobre mí-----------------------------*/
+
 .section {
     padding: 4rem 2rem;
  }
 
 .secciónSobreMi {
-    display: flex; /* Usar flexbox para alinear los elementos */
+    display: flex; 
     background-color: #485696; 
-    height: auto; /* Cambiar a auto para ajustarse al contenido */
+    height: 580px; 
     margin-top: 80px;
 }
 
 .contenidoSobreMi {
-    max-width: 50%; /* Ajustar a la mitad del contenedor */
-    margin-top: 80px;
-    margin-left: 100px;
-    padding-left: 20px; /* Espaciado interno */
+    max-width: 50%; 
+    margin: 100px 50px;
+    padding: 20px; 
     color:#E7E7E7;
+    text-align: center;
+}
+
+.contenidoSobreMi p{
+    text-align: center;
+    margin: 0 100px;
+    max-width: 100%;
 }
 
 .myPic {
-    max-width: 50%; /* Ajustar a la mitad del contenedor */
+    position: relative;
+    max-width: 50%; 
     display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-
+    justify-content: center; 
+    align-items: center; 
     overflow: hidden;
 }
 
 .myPic img {
     max-width:100%; 
-    height: 500px;
+    height: 100%;
     object-fit: cover;
+    transition: background-image 0.5s ease;
 }
+
+.myPic .gif{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.myPic:hover .estatica{
+    opacity: 0;
+}
+
+.myPic:hover .gif{
+    opacity: 1;
+}
+
+/*------------------------Sección habilidades------------------------*/
 
 .secciónHabilidades {
     background-color:white;
-    padding :4rem 0 ;
-    text-align:center ;
-    color:#4a4e8c ;
+    padding :4rem 0;
+    text-align:center;
+    color:#4a4e8c;
+}
+
+.secciónHabilidades p{
+    margin: 50px 120px;
 }
 
 .slider {
     width: 90vw;
     height: auto;
-    margin:auto;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -178,6 +207,8 @@ header{
     color:#2a2e5c;
 }
 
+/*---------------------------Seccion portafolio----------------------*/
+
 .secciónPortafolio {
     background-color: #4a4e8c;
     color: white;
@@ -193,30 +224,84 @@ header{
 .secciónPortafolio p {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 4rem auto;
 }
 
-.contenidoPortafolio{
+.contenedorPortafolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    gap: 40px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+.tarjetaPortafolio {
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetaPortafolio:hover {
+    transform: translateY(-5px);
+}
+
+.contenidoPortafolio img, .itemPortafolio img {
+    width: 100%;
+    height: 300px;
+    --mask:
+    linear-gradient(0,#0000 50px,#000 0),
+    radial-gradient(50px,#000 calc(100% - 1px),#0000) bottom/99.9px 108px;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    object-fit: cover;
 }
 
 .itemPortafolio {
-    background-color: #eee;
-    aspect-ratio: 16/9;
-    border-radius: 8px;
-    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
 }
 
-.itemPortafolio img {
+.imgOverlay {
+    position: absolute;
+    --mask: 
+    linear-gradient(0,#0000 50px,#000 0),
+    radial-gradient(50px,#000 calc(100% - 1px),#0000) bottom/99.9px 108px;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
+
+.itemPortafolio:hover .imgOverlay {
+    opacity: 1;
+}
+
+.btnVer{
+    background-color: transparent;
+}
+
+.btnVer:hover{
+    background-color: transparent;
+}
+
+/*---------------------------Sección contáctame----------------------*/
 
 .secciónContáctame {
     background-color: #F8F8F8;
@@ -260,8 +345,16 @@ header{
 
 .entradasFormulario input::placeholder,
 .entradasFormulario textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
     color: #485696;
     opacity: 0.7;
+}
+
+.entradasFormulario input:focus,
+.entradasFormulario textarea:focus {
+    outline: none; 
+    border: 1.5px solid #485696;
+    background-color: #dfe3ee;
 }
 
 .botónEnviar {
@@ -281,7 +374,6 @@ header{
     background-color: #98c248;
 }
 
-
 .linkRedes {
     position: fixed;
     bottom: 2rem;
@@ -300,22 +392,153 @@ header{
     color: #2a2e5c;
 }
 
+/*------------------------------Responsive------------------------*/
 @media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; }
+    p { font-size: 14px; }
+}
+
+/* Header y navegación responsive */
+@media (max-width: 768px) {
+    .contenedorNav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .barraNav {
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 60px; 
-        right: 0; 
-        background-color: white; 
-        width: 100%; 
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+}
+
+/* Sección Sobre Mí responsive */
+@media (max-width: 992px) {
+    .secciónSobreMi {
+        flex-direction: column;
+        height: auto;
+        margin-top: var(--header-height);
+    }
+
+    .contenidoSobreMi {
+        max-width: 100%;
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+
+    .contenidoSobreMi p {
+        margin: 0 2rem;
+    }
+
+    .myPic {
+        max-width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .myPic {
+        height: 300px;
+    }
+}
+
+/* Sección Habilidades responsive */
+@media (max-width: 768px) {
+    .secciónHabilidades p {
+        margin: 2rem 1rem;
+    }
+
+    .slider {
+        width: 95vw;
+    }
+
+    .slider .slide {
+        width: 150px;
+    }
+
+    .iconos {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+/* Sección Portafolio responsive */
+@media (max-width: 992px) {
+    .contenedorPortafolio {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenedorPortafolio {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetaPortafolio {
+        height: 250px;
+    }
+
+    .contenidoPortafolio img, 
+    .itemPortafolio img {
+        height: 250px;
+    }
+}
+
+/* Sección Contáctame responsive */
+@media (max-width: 768px) {
+    .contenedorContáctame {
+        padding: 0 1rem;
+    }
+
+    .entradasFormulario input,
+    .entradasFormulario textarea {
+        padding: 0.8rem;
+    }
+}
+
+/* Links de redes sociales responsive */
+@media (max-width: 576px) {
+    .linkRedes {
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .linkRedes a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajustes generales para dispositivos muy pequeños */
+@media (max-width: 320px) {
+    .contenidoSobreMi {
+        margin: 1rem 0.5rem;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .myPic {
+        height: 250px;
+    }
+}
+
+/* Mejoras de rendimiento para animaciones */
+@media (prefers-reduced-motion: reduce) {
+    .slider .slide-track {
+        animation: none;
     }
     
-    .barraNav.active {
-        display: flex;
+    * {
+        transition-duration: 0.001ms !important;
     }
- 
-    .menu-toggle {
-        display: flex;
-    }
- }
+}
